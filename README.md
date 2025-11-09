@@ -11,7 +11,7 @@ Acest document ofera instructiunile esentiale pentru a rula si intelege acest pr
 4.  Navigati la directorul unde ati clonat proiectul si selectati-l.
 5.  Verificati daca aveti instalata versiunea de Unity corespunzatoare proiectului.
 6.  Dupa ce proiectul se incarca in Unity Editor, mergeti in fereastra "Project", la `Assets -> Scenes`.
-7.  Acolo se afla Map1, Map2, Map3. Acestea scenele care vor putea fi alese de catre jucator ca background pentru lupta.
+7.  Acolo se afla Map1, Map2, Map3. Acestea sunt scenele care vor putea fi alese de catre jucator ca background pentru lupta.
 
 ## Ce contine
 
