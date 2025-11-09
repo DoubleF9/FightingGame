@@ -10,9 +10,8 @@ Acest document ofera instructiunile esentiale pentru a rula si intelege acest pr
 3.  Faceti clic pe "Open" (sau "Add project from disk").
 4.  Navigati la directorul unde ati clonat proiectul si selectati-l.
 5.  Verificati daca aveti instalata versiunea de Unity corespunzatoare proiectului.
-6.  Dupa ce proiectul se incarca in Unity Editor, mergeti in fereastra "Project" si navigati la `Assets -> Scenes`.
-7.  Deschideti scena principala a jocului (de exemplu, "SampleScene" sau "MainScene").
-8.  Apasati butonul "Play" .
+6.  Dupa ce proiectul se incarca in Unity Editor, mergeti in fereastra "Project", la `Assets -> Scenes`.
+7.  Acolo se afla Map1, Map2, Map3. Acestea scenele care vor putea fi alese de catre jucator ca background pentru lupta.
 
 ## Ce contine
 
@@ -21,7 +20,8 @@ Acest repository gazduieste proiectul Unity pentru jocul nostru de tip "fighting
 La stadiul actual (finalul Sprintului 1), proiectul include:
 * Structura de baza a folderelor (Scene, Scripturi, Prefabs etc.).
 * Configurarea initiala a proiectului si fisierul `.gitignore`.
-* O scena de test ("SampleScene") cu elemente de baza (placeholder) pentru testarea mecanicilor initiale.
+* 3 Scene de background cu modele 3D si collidere din care playerul va putea alege
+* Un model 3D si un rig pentru primul personaj
 
 ## Rapoarte Sprint
 
