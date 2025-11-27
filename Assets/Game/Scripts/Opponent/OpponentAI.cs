@@ -7,6 +7,7 @@ public class OpponentAI : MonoBehaviour
     public float movementSpeed = 1f;
     public float rotationSpeed = 10f;
     public CharacterController characterController;
+    public Animator animator; 
 
     [Header("Opponent Fight")]
     public float attackCooldown = 0.5f;
@@ -32,6 +33,7 @@ public class OpponentAI : MonoBehaviour
     {
         currentHealth = maxHealth;
         createRandomNumber();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -47,6 +49,7 @@ public class OpponentAI : MonoBehaviour
             if (players[i].gameObject.activeSelf && Vector3.Distance(transform.position, players[i].position) <= attackRadius)
             {
                 //stop walking animation
+                animator.SetBool("Walking", false);
                 if (Time.time - lastAttackTime > attackCooldown)
                 {
                     int randomAttack = Random.Range(0, attackAnimations.Length);
@@ -69,6 +72,7 @@ public class OpponentAI : MonoBehaviour
                     transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
 
                     //play walk anim
+                    animator.SetBool("Walking", true);
 
                 }
             }
@@ -79,6 +83,7 @@ public class OpponentAI : MonoBehaviour
     {
 
         // Trigger attack animation
+        animator.Play(attackAnimations[attackIndex]);
         int damage = attackDamage;
         Debug.Log($"Opponent performed attack {attackIndex} with damage {damage}");
         lastAttackTime = Time.time;
@@ -111,6 +116,7 @@ public class OpponentAI : MonoBehaviour
         //decrease health
         currentHealth -= takeDamage;
         //play anim
+        animator.Play("HitDamageAnimation");
 
         if (currentHealth <= 0)
         {

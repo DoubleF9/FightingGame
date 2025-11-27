@@ -7,6 +7,7 @@ public class FightingController : MonoBehaviour
     public float movementSpeed = 1f;
     public float rotationSpeed = 10f;
     private CharacterController characterController;
+    private Animator animator; // Add reference to Animator
 
     [Header("Player Fight")]
     public float attackCooldown = 0.5f;
@@ -28,6 +29,7 @@ public class FightingController : MonoBehaviour
     {
         currentHealth = maxHealth;
         characterController = GetComponent<CharacterController>();
+        animator = GetComponent<Animator>(); 
     }
 
     void Update()
@@ -59,20 +61,38 @@ public class FightingController : MonoBehaviour
 
         Vector3 movement = new Vector3(horizontalInput, 0, verticalInput);
 
-        if(movement!=Vector3.zero)
+        if (movement != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            if (horizontalInput > 0)
+            {
+                animator.SetBool("Walking", true);
+            }
+            else if (horizontalInput < 0)
+            {
+                animator.SetBool("Walking", true);
+            }
+            else if (verticalInput != 0)
+            {
+                animator.SetBool("Walking", true);
+            }
+        }
+        else
+        {
+            animator.SetBool("Walking", false);
         }
 
         characterController.Move(movement * movementSpeed * Time.deltaTime);
+        
     }
 
     void PerformAttack(int attackIndex)
     {
         if(Time.time - lastAttackTime > attackCooldown)
         {
-            // Trigger attack animation
+            animator.Play(attackAnimations[attackIndex]);
             int damage = attackDamage;
             Debug.Log($"Performing attack {attackIndex} with damage {damage}");
             lastAttackTime = Time.time;
@@ -84,12 +104,14 @@ public class FightingController : MonoBehaviour
                     if (opponent.TryGetComponent<OpponentAI>(out OpponentAI opponentAI))
                     {
                         opponentAI.StartCoroutine(opponentAI.PlayHitDamageAnimation(damage));
+                        Debug.Log($"Dealt {damage} damage to {opponent.name}");
                     }
                     else
                     {
                         Debug.LogWarning($"No OpponentAI found on {opponent.name}");
                     }
                 }
+
             }
 
         }
@@ -104,7 +126,7 @@ public class FightingController : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.E))
         {
-            //play animation
+            animator.Play("DodgeFrontAnimation");
             Vector3 dodgeDirection = transform.forward* dodgeDistance;
 
             characterController.Move(dodgeDirection);
@@ -124,8 +146,9 @@ public class FightingController : MonoBehaviour
         //decrease health
         currentHealth -= takeDamage;
         //play anim
+        animator.Play("HitDamageAnimation");
 
-        if(currentHealth<=0)
+        if (currentHealth<=0)
         {
             Die();
         }

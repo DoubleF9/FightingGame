@@ -271,8 +271,141 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   targets:
   - {fileID: 4896898363305028249}
+  - {fileID: 394654354}
   smoothSpeed: 0.125
   offset: {x: 2, y: 0, z: -4}
+--- !u!1001 &394654349
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.94
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.059
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_Name
+      value: Deadpool
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e16c448844e84e24ebf7c133c79f3199, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 394654351}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 394654352}
+  m_SourcePrefab: {fileID: 100100000, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+--- !u!1 &394654350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+  m_PrefabInstance: {fileID: 394654349}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &394654351
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394654350}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.9
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0.92, z: 0}
+--- !u!114 &394654352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394654350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a16d62428e41e44a9c88e233f8903a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FightingController
+  movementSpeed: 2
+  rotationSpeed: 10
+  attackCooldown: 0.5
+  attackDamage: 5
+  attackAnimations:
+  - Attack1Animation
+  - Attack2Animation
+  - Attack3Animation
+  - Attack4Animation
+  dodgeDistance: 2
+  attackRadius: 2.2
+  opponents: []
+  hitSounds:
+  - {fileID: 8300000, guid: 7cbd6cd765888ff418d01d98bd1ce9c2, type: 3}
+  - {fileID: 8300000, guid: 3df9bbbc130ccb344af5f3fc793a630f, type: 3}
+  - {fileID: 8300000, guid: 1e3312d22540aa14597a1fb4739f2782, type: 3}
+  maxHealth: 100
+  currentHealth: 0
+--- !u!4 &394654354 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
+  m_PrefabInstance: {fileID: 394654349}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,7 +2630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!143 &5241793804101267492
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2744,6 +2877,7 @@ MonoBehaviour:
   fightingController:
   - {fileID: 5241793804101267493}
   players:
+  - {fileID: 394654354}
   - {fileID: 4896898363305028249}
   isTakingDamage: 0
   hitSounds:
@@ -3717,3 +3851,4 @@ SceneRoots:
   - {fileID: 1567369160}
   - {fileID: 4896898363305028249}
   - {fileID: 463175948044571355}
+  - {fileID: 394654349}
