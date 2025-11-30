@@ -28,10 +28,12 @@ public class OpponentAI : MonoBehaviour
     [Header("Health")]
     public int maxHealth = 100;
     public int currentHealth;
+    public HealthBar healthBar;
 
     void Awake()
     {
         currentHealth = maxHealth;
+        healthBar.GiveFullHealth(currentHealth);
         createRandomNumber();
         animator = GetComponent<Animator>();
     }
@@ -115,6 +117,7 @@ public class OpponentAI : MonoBehaviour
 
         //decrease health
         currentHealth -= takeDamage;
+        healthBar.SetHealth(currentHealth);
         //play anim
         animator.Play("HitDamageAnimation");
 

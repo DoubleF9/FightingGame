@@ -24,12 +24,14 @@ public class FightingController : MonoBehaviour
     [Header("Health")]
     public int maxHealth = 100;
     public int currentHealth;
+    public HealthBar healthBar;
 
     void Awake()
     {
         currentHealth = maxHealth;
+        healthBar.GiveFullHealth(currentHealth);
         characterController = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -145,6 +147,7 @@ public class FightingController : MonoBehaviour
 
         //decrease health
         currentHealth -= takeDamage;
+        healthBar.SetHealth(currentHealth);
         //play anim
         animator.Play("HitDamageAnimation");
 
