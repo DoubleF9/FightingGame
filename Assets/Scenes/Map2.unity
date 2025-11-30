@@ -1042,7 +1042,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2a295373a10441545bcaf619b61bea94, type: 3}
   maxHealth: 100
   currentHealth: 0
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 5698938473568804395}
 --- !u!4 &296920313 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1ac659d355315c541b69fe69872e2402, type: 3}
