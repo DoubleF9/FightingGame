@@ -12,7 +12,7 @@ Acest document ofera instructiunile esentiale pentru a rula si intelege acest pr
 5.  Verificati daca aveti instalata versiunea de Unity corespunzatoare proiectului.
 6.  Dupa ce proiectul se incarca in Unity Editor, mergeti in fereastra "Project", la `Assets -> Scenes`.
 7.  Acolo se afla Map1, Map2, Map3. Acestea sunt scenele care vor putea fi alese de catre jucator ca background pentru lupta.
-8.  Intrati pe Map1 si dati play. Controlati personajul din stanga si va luptati cu cel din dreapta.
+8.  Intrati pe Map2 si dati play. Pentru a alege personajul vostru si inamicul, dati toggle active in inspector la un Player si un Opponent din hierarchy. Controlati personajul din stanga si va luptati cu cel din dreapta.
 
 
 Acest repository găzduiește proiectul Unity pentru jocul nostru de tip "fighting game", inspirat de titluri precum Mortal Kombat.
