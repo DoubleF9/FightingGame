@@ -28,6 +28,12 @@ public class FightingController : MonoBehaviour
 
     void Awake()
     {
+
+        if (healthBar == null)
+        {
+            return;
+        }
+
         currentHealth = maxHealth;
         healthBar.GiveFullHealth(currentHealth);
         characterController = GetComponent<CharacterController>();
@@ -160,6 +166,6 @@ public class FightingController : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} has died.");
         //play death animation
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
