@@ -130,6 +130,6 @@ public class OpponentAI : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} has died.");
         //play death animation
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

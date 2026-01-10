@@ -28,6 +28,12 @@ public class FightingController : MonoBehaviour
 
     void Awake()
     {
+
+        if (healthBar == null)
+        {
+            return;
+        }
+
         currentHealth = maxHealth;
         healthBar.GiveFullHealth(currentHealth);
         characterController = GetComponent<CharacterController>();
@@ -101,7 +107,11 @@ public class FightingController : MonoBehaviour
 
             foreach(Transform opponent in opponents)
             {
-                if(Vector3.Distance(transform.position, opponent.position) <= attackRadius)
+                // Skip this opponent if they are missing or inactive
+                if (opponent == null || !opponent.gameObject.activeInHierarchy)
+                    continue;
+
+                if (Vector3.Distance(transform.position, opponent.position) <= attackRadius)
                 {
                     if (opponent.TryGetComponent<OpponentAI>(out OpponentAI opponentAI))
                     {
@@ -160,6 +170,6 @@ public class FightingController : MonoBehaviour
     {
         Debug.Log($"{gameObject.name} has died.");
         //play death animation
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }
