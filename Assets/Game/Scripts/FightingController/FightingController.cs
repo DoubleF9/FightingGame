@@ -12,7 +12,7 @@ public class FightingController : MonoBehaviour
     [Header("Player Fight")]
     public float attackCooldown = 0.5f;
     public int attackDamage = 5;
-    public string[] attackAnimations= {"Attack1Animation", "Attack2Animation", "Attack3Animation", "Attack4Animation" };
+    public string[] attackAnimations = { "Attack1Animation", "Attack2Animation", "Attack3Animation", "Attack4Animation" };
     public float dodgeDistance = 2f;
     public float attackRadius = 2.2f;
     public Transform[] opponents;
@@ -25,6 +25,9 @@ public class FightingController : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public HealthBar healthBar;
+
+    [Header("Super Meter")]
+    public SuperMeter superMeter; // Reference to super meter component
 
     void Awake()
     {
@@ -42,21 +45,27 @@ public class FightingController : MonoBehaviour
 
     void Update()
     {
+        // Block all actions while performing super move
+        if (superMeter != null && superMeter.IsPerformingSuper())
+        {
+            return;
+        }
+
         PerformMovement();
         PerformDodgeFront();
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             PerformAttack(0);
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             PerformAttack(1);
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             PerformAttack(2);
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha4))
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             PerformAttack(3);
         }
@@ -93,19 +102,19 @@ public class FightingController : MonoBehaviour
         }
 
         characterController.Move(movement * movementSpeed * Time.deltaTime);
-        
+
     }
 
     void PerformAttack(int attackIndex)
     {
-        if(Time.time - lastAttackTime > attackCooldown)
+        if (Time.time - lastAttackTime > attackCooldown)
         {
             animator.Play(attackAnimations[attackIndex]);
             int damage = attackDamage;
             Debug.Log($"Performing attack {attackIndex} with damage {damage}");
             lastAttackTime = Time.time;
 
-            foreach(Transform opponent in opponents)
+            foreach (Transform opponent in opponents)
             {
                 // Skip this opponent if they are missing or inactive
                 if (opponent == null || !opponent.gameObject.activeInHierarchy)
@@ -117,6 +126,12 @@ public class FightingController : MonoBehaviour
                     {
                         opponentAI.StartCoroutine(opponentAI.PlayHitDamageAnimation(damage));
                         Debug.Log($"Dealt {damage} damage to {opponent.name}");
+
+                        // Charge super meter when hitting opponent
+                        if (superMeter != null)
+                        {
+                            superMeter.OnHitOpponent();
+                        }
                     }
                     else
                     {
@@ -136,20 +151,26 @@ public class FightingController : MonoBehaviour
 
     void PerformDodgeFront()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             animator.Play("DodgeFrontAnimation");
-            Vector3 dodgeDirection = transform.forward* dodgeDistance;
+            Vector3 dodgeDirection = transform.forward * dodgeDistance;
 
             characterController.Move(dodgeDirection);
+
+            // Charge super meter on dodge
+            if (superMeter != null)
+            {
+                superMeter.OnDodge();
+            }
         }
     }
 
     public IEnumerator PlayHitDamageAnimation(int takeDamage)
     {
         yield return new WaitForSeconds(0.5f);
-        
-        if(hitSounds!=null && hitSounds.Length>0)
+
+        if (hitSounds != null && hitSounds.Length > 0)
         {
             int randomIndex = Random.Range(0, hitSounds.Length);
             AudioSource.PlayClipAtPoint(hitSounds[randomIndex], transform.position); // Play sound at player's position
@@ -161,7 +182,13 @@ public class FightingController : MonoBehaviour
         //play anim
         animator.Play("HitDamageAnimation");
 
-        if (currentHealth<=0)
+        // Charge super meter when taking damage (rage mechanic)
+        if (superMeter != null)
+        {
+            superMeter.OnTakeDamage();
+        }
+
+        if (currentHealth <= 0)
         {
             Die();
         }

@@ -4134,6 +4134,7 @@ GameObject:
   - component: {fileID: 4887973975514642652}
   - component: {fileID: 1062016096520226646}
   - component: {fileID: 4466560932797470587}
+  - component: {fileID: 8552542939639450799}
   m_Layer: 0
   m_Name: Deadpool Opponent
   m_TagString: Untagged
@@ -4234,6 +4235,7 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 8552542939639450799}
 --- !u!143 &4466560932797470587
 CharacterController:
   m_ObjectHideFlags: 0
@@ -4259,6 +4261,31 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &8552542939639450799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2418682143157891626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &2459425558479864095
 GameObject:
   m_ObjectHideFlags: 0
@@ -5199,6 +5226,7 @@ GameObject:
   - component: {fileID: 1475654286247013790}
   - component: {fileID: 3095814003895038270}
   - component: {fileID: 7526512777261235763}
+  - component: {fileID: 1437526641422884233}
   m_Layer: 0
   m_Name: JackSkellington Opponent
   m_TagString: Untagged
@@ -5323,6 +5351,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 1437526641422884233}
+--- !u!114 &1437526641422884233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210658232792444124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &3249346538266381069
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,6 +5425,7 @@ GameObject:
   - component: {fileID: 5997104902723785302}
   - component: {fileID: 2636550080379084098}
   - component: {fileID: 2403221529124444960}
+  - component: {fileID: 976569782979089155}
   m_Layer: 0
   m_Name: Patrick Opponent
   m_TagString: Untagged
@@ -5495,6 +5550,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 976569782979089155}
+--- !u!114 &976569782979089155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3255885091770536155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &3280018925700676419
 GameObject:
   m_ObjectHideFlags: 0
@@ -8163,6 +8244,7 @@ GameObject:
   - component: {fileID: 1236534470244851092}
   - component: {fileID: 1345549371231986696}
   - component: {fileID: 8436448713749638819}
+  - component: {fileID: 2379958781032504327}
   m_Layer: 0
   m_Name: Rick Opponent
   m_TagString: Untagged
@@ -8294,6 +8376,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 2379958781032504327}
+--- !u!114 &2379958781032504327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4810099644347853236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &4833719527708831856
 GameObject:
   m_ObjectHideFlags: 0
@@ -10354,6 +10462,7 @@ GameObject:
   - component: {fileID: 8281533796645162633}
   - component: {fileID: 3042704763641195873}
   - component: {fileID: 869266545139998556}
+  - component: {fileID: 2733252706160230015}
   m_Layer: 0
   m_Name: Mario Opponent
   m_TagString: Untagged
@@ -10478,6 +10587,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 2733252706160230015}
+--- !u!114 &2733252706160230015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058082470373888337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &6065694950604464868
 GameObject:
   m_ObjectHideFlags: 0
@@ -11410,6 +11545,7 @@ GameObject:
   - component: {fileID: 3091547546522402503}
   - component: {fileID: 8137568586463215292}
   - component: {fileID: 5936337338154599254}
+  - component: {fileID: 6423270526112889336}
   m_Layer: 0
   m_Name: JohnCena Opponent
   m_TagString: Untagged
@@ -11534,6 +11670,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 6423270526112889336}
+--- !u!114 &6423270526112889336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530888874687439364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &6539287760296523818
 GameObject:
   m_ObjectHideFlags: 0
@@ -13215,6 +13377,7 @@ GameObject:
   - component: {fileID: 6222380470350056477}
   - component: {fileID: 764391593651033435}
   - component: {fileID: 4950434074339081952}
+  - component: {fileID: 4759139895596923167}
   m_Layer: 0
   m_Name: Shrek Opponent
   m_TagString: Untagged
@@ -13339,6 +13502,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 4759139895596923167}
+--- !u!114 &4759139895596923167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178896490792775656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &7215059397439762072
 GameObject:
   m_ObjectHideFlags: 0
@@ -15127,6 +15316,7 @@ GameObject:
   - component: {fileID: 2687109753574942656}
   - component: {fileID: 7129587968401413016}
   - component: {fileID: 6524639179254344757}
+  - component: {fileID: 3062252146383067465}
   m_Layer: 0
   m_Name: Po Opponent
   m_TagString: Untagged
@@ -15251,6 +15441,32 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 0}
+  superMeterAI: {fileID: 3062252146383067465}
+--- !u!114 &3062252146383067465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213712425531283524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 020f1590fbf2a4a5484e29b0524c1721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SuperMeterAI
+  maxMeter: 100
+  currentMeter: 0
+  meterGainOnHit: 10
+  meterGainOnDamage: 5
+  passiveMeterGain: 1
+  superDamage: 40
+  superKnockback: 5
+  superRadius: 3
+  superAnimationName: Attack4Animation
+  superUseChance: 0.7
+  superMeterUI: {fileID: 0}
+  superActivationSound: {fileID: 8300000, guid: da396a16a7f24f64cbb0054f5a56b46a, type: 3}
+  superImpactSound: {fileID: 8300000, guid: 8ba1ce15e8593064aa781b941381f053, type: 3}
 --- !u!1 &8245448166030625767
 GameObject:
   m_ObjectHideFlags: 0

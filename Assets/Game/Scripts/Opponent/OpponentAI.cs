@@ -30,6 +30,9 @@ public class OpponentAI : MonoBehaviour
     public int currentHealth;
     public HealthBar healthBar;
 
+    [Header("Super Meter")]
+    public SuperMeterAI superMeterAI; // Reference to AI super meter component
+
     void Awake()
     {
         currentHealth = maxHealth;
@@ -40,6 +43,12 @@ public class OpponentAI : MonoBehaviour
 
     void Update()
     {
+        // Block all actions while performing super move
+        if (superMeterAI != null && superMeterAI.IsPerformingSuper())
+        {
+            return;
+        }
+
         if(attackCount==randomNumber)
         {
             attackCount = 0;
@@ -61,6 +70,12 @@ public class OpponentAI : MonoBehaviour
                     }
                     //play attack anim
                     fightingController[i].StartCoroutine(fightingController[i].PlayHitDamageAnimation(attackDamage));
+
+                    // Charge super meter when hitting player
+                    if (superMeterAI != null)
+                    {
+                        superMeterAI.OnHitPlayer();
+                    }
                 }
 
             }
@@ -120,6 +135,12 @@ public class OpponentAI : MonoBehaviour
         healthBar.SetHealth(currentHealth);
         //play anim
         animator.Play("HitDamageAnimation");
+
+        // Charge super meter when taking damage (rage mechanic)
+        if (superMeterAI != null)
+        {
+            superMeterAI.OnTakeDamage();
+        }
 
         if (currentHealth <= 0)
         {
