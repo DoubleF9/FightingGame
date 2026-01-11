@@ -100,90 +100,156 @@ public class SuperMeter : MonoBehaviour
         isPerformingSuper = true;
         Debug.Log("SUPER MOVE ACTIVATED!");
 
-        // Play activation sound
-        if (superActivationSound != null)
+        // 1. FIND TARGET & LOCK
+        Transform target = null;
+        float closestDist = superRadius;
+
+        // Find closest enemy
+        if (fightingController != null && fightingController.opponents != null)
         {
-            AudioSource.PlayClipAtPoint(superActivationSound, transform.position);
-        }
-
-        // Hit stop effect (brief freeze)
-        if (ScreenEffects.Instance != null)
-        {
-            ScreenEffects.Instance.DoHitStop(0.1f);
-        }
-        yield return new WaitForSecondsRealtime(0.1f);
-
-        // Slow motion during super
-        if (ScreenEffects.Instance != null)
-        {
-            ScreenEffects.Instance.DoSlowMotion(0.3f, 0.5f);
-        }
-
-        // Play super animation
-        animator.Play(superAnimationName);
-
-        // Wait a bit for the animation to reach the hit frame
-        yield return new WaitForSeconds(0.3f);
-
-        // Check for opponents in range and deal damage
-        // Use opponents from FightingController (no duplicate setup needed!)
-        if (fightingController == null || fightingController.opponents == null)
-        {
-            Debug.LogWarning("SuperMeter: No FightingController or opponents found!");
-            isPerformingSuper = false;
-            yield break;
-        }
-
-        foreach (Transform opponent in fightingController.opponents)
-        {
-            // Skip if opponent is missing or inactive
-            if (opponent == null || !opponent.gameObject.activeInHierarchy)
-                continue;
-
-            if (Vector3.Distance(transform.position, opponent.position) <= superRadius)
+            foreach (Transform opponent in fightingController.opponents)
             {
-                // Play impact sound
-                if (superImpactSound != null)
-                {
-                    AudioSource.PlayClipAtPoint(superImpactSound, opponent.position);
-                }
-
-                // Screen shake on impact
-                if (ScreenEffects.Instance != null)
-                {
-                    ScreenEffects.Instance.ShakeScreen(0.4f, 0.3f);
-                }
-
-                // Deal damage to opponent
-                if (opponent.TryGetComponent<OpponentAI>(out OpponentAI opponentAI))
-                {
-                    // Deal super damage
-                    opponentAI.StartCoroutine(opponentAI.PlayHitDamageAnimation(superDamage));
-                    Debug.Log($"SUPER HIT! Dealt {superDamage} damage to {opponent.name}!");
-
-                    // Apply knockback
-                    Vector3 knockbackDirection = (opponent.position - transform.position).normalized;
-                    if (opponent.TryGetComponent<CharacterController>(out CharacterController opponentController))
-                    {
-                        opponentController.Move(knockbackDirection * superKnockback);
-                    }
-                }
+                if (opponent == null || !opponent.gameObject.activeInHierarchy) continue;
+                float d = Vector3.Distance(transform.position, opponent.position);
+                if (d < closestDist) { closestDist = d; target = opponent; }
             }
         }
 
-        // Empty the super meter
-        currentMeter = 0f;
-        isSuperReady = false;
-        if (superMeterUI != null)
+        OpponentAI targetAI = null;
+        CharacterController targetCC = null;
+
+        // 2. DISABLE ENEMY & START ANIMATION
+        if (target != null)
         {
-            superMeterUI.EmptyMeter();
+            target.TryGetComponent<OpponentAI>(out targetAI);
+            target.TryGetComponent<CharacterController>(out targetCC);
+
+            if (targetAI != null)
+            {
+                targetAI.enabled = false;
+                targetAI.StopAllCoroutines();
+                if (targetAI.animator != null) targetAI.animator.Play("HitDamageAnimation");
+            }
         }
 
-        // Wait for animation to finish
-        yield return new WaitForSeconds(0.5f);
+        if (superActivationSound != null) AudioSource.PlayClipAtPoint(superActivationSound, transform.position);
+        animator.Play(superAnimationName);
 
+        // 3. SMOOTH ROTATION & DASH
+        if (target != null)
+        {
+            float windUpTime = 0.2f;
+            float timer = 0f;
+
+            // Rotation Setup
+            Quaternion startRot = transform.rotation;
+            Vector3 dirToEnemy = (target.position - transform.position).normalized;
+            dirToEnemy.y = 0;
+            Quaternion endRot = Quaternion.LookRotation(dirToEnemy);
+
+            // Dash Setup
+            float desiredDistance = 0.5f;
+            Vector3 startPos = transform.position;
+
+            Vector3 endPos = target.position - (dirToEnemy * desiredDistance);
+            endPos.y = transform.position.y;
+
+            while (timer < windUpTime)
+            {
+                // A. Smooth Rotate
+                transform.rotation = Quaternion.Slerp(startRot, endRot, timer / windUpTime);
+
+                // B. Smooth Dash (Slide towards enemy)
+                Vector3 nextPos = Vector3.Lerp(startPos, endPos, timer / windUpTime);
+                Vector3 moveDelta = nextPos - transform.position;
+
+                if (characterController != null)
+                {
+                    characterController.Move(moveDelta);
+                }
+                else
+                {
+                    transform.position = nextPos;
+                }
+
+                timer += Time.deltaTime;
+                yield return null;
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
+
+        // --- HIT 1 ---
+        if (target != null)
+        {
+            ApplyDamage(targetAI, 10);
+            if (superImpactSound != null) AudioSource.PlayClipAtPoint(superImpactSound, target.position);
+            if (ScreenEffects.Instance != null) { ScreenEffects.Instance.DoHitStop(0.05f); ScreenEffects.Instance.ShakeScreen(0.1f, 0.1f); }
+        }
+        yield return new WaitForSeconds(0.2f);
+
+        // --- HIT 2 ---
+        if (target != null)
+        {
+            ApplyDamage(targetAI, 10);
+            if (superImpactSound != null) AudioSource.PlayClipAtPoint(superImpactSound, target.position);
+            if (ScreenEffects.Instance != null) { ScreenEffects.Instance.DoHitStop(0.05f); ScreenEffects.Instance.ShakeScreen(0.1f, 0.1f); }
+        }
+        yield return new WaitForSeconds(0.2f);
+
+        // --- HIT 3 ---
+        if (target != null)
+        {
+            ApplyDamage(targetAI, 10);
+            if (superImpactSound != null) AudioSource.PlayClipAtPoint(superImpactSound, target.position);
+            if (ScreenEffects.Instance != null) { ScreenEffects.Instance.DoHitStop(0.05f); ScreenEffects.Instance.ShakeScreen(0.1f, 0.1f); }
+        }
+        yield return new WaitForSeconds(0.4f);
+
+        // --- FINISHER ---
+        if (target != null)
+        {
+            ApplyDamage(targetAI, superDamage);
+            if (superImpactSound != null) AudioSource.PlayClipAtPoint(superImpactSound, target.position);
+
+            if (ScreenEffects.Instance != null) ScreenEffects.Instance.ShakeScreen(0.3f, 0.2f);
+
+            Vector3 knockbackDir = (target.position - transform.position).normalized;
+            if (targetCC != null) StartCoroutine(PushEnemy(targetCC, knockbackDir * superKnockback, 0.2f));
+        }
+
+        // 4. CLEANUP
+        yield return new WaitForSeconds(2f);
+        if (targetAI != null) targetAI.enabled = true;
+
+        currentMeter = 0f;
+        isSuperReady = false;
+        if (superMeterUI != null) superMeterUI.EmptyMeter();
         isPerformingSuper = false;
-        Debug.Log("Super move complete!");
+    }
+
+    // Helper function to handle damage simply
+    void ApplyDamage(OpponentAI ai, int dmg)
+    {
+        if (ai != null)
+        {
+            // We use StartCoroutine on the AI to trigger its hit logic
+            ai.StartCoroutine(ai.PlayHitDamageAnimation(dmg));
+        }
+    }
+
+    // Helper to push the enemy smoothly
+    IEnumerator PushEnemy(CharacterController cc, Vector3 velocity, float time)
+    {
+        float timer = 0;
+        while (timer < time)
+        {
+            if (cc != null) cc.Move(velocity * Time.deltaTime);
+            timer += Time.deltaTime;
+            yield return null;
+        }
     }
 
     // Check if super is available (for UI or AI)

@@ -1305,6 +1305,10 @@ PrefabInstance:
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 2497233563548312070, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 3569012309707218702, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: m_Name
       value: PlayerCharacters
@@ -1425,6 +1429,10 @@ PrefabInstance:
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 4589539709734466131, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: healthBar
       value: 
@@ -1465,6 +1473,10 @@ PrefabInstance:
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 7595993018018299660, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 7643477248990386785, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: healthBar
       value: 
@@ -1505,6 +1517,10 @@ PrefabInstance:
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 7677504175767081116, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: healthBar
       value: 
@@ -1545,18 +1561,34 @@ PrefabInstance:
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 8125594411603597937, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 8401373344071379796, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 8401373344071379796, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 8718866644498637444, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 8718866644498637444, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 8986668208605944170, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: superMeterUI
       value: 
       objectReference: {fileID: 2093237928706323342}
+    - target: {fileID: 8986668208605944170, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: superAnimationName
+      value: SuperAttackAnimation
+      objectReference: {fileID: 0}
     - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: healthBar
       value: 

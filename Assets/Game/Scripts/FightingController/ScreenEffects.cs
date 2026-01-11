@@ -33,10 +33,7 @@ public class ScreenEffects : MonoBehaviour
             mainCamera = Camera.main;
         }
 
-        if (mainCamera != null)
-        {
-            originalCameraPosition = mainCamera.transform.localPosition;
-        }
+
     }
 
     // Call this to shake the screen
@@ -58,20 +55,23 @@ public class ScreenEffects : MonoBehaviour
     {
         float elapsed = 0f;
 
+        // 1. Capture the position RIGHT NOW (relative to the parent moving with the player)
+        Vector3 currentOriginalPos = mainCamera.transform.localPosition;
+
         while (elapsed < duration)
         {
-            // Random offset for shake
             float x = Random.Range(-1f, 1f) * intensity;
             float y = Random.Range(-1f, 1f) * intensity;
 
-            mainCamera.transform.localPosition = originalCameraPosition + new Vector3(x, y, 0);
+            // 2. Shake relative to that captured position
+            mainCamera.transform.localPosition = currentOriginalPos + new Vector3(x, y, 0);
 
             elapsed += Time.deltaTime;
             yield return null;
         }
 
-        // Reset camera position
-        mainCamera.transform.localPosition = originalCameraPosition;
+        // 3. Return to the captured position
+        mainCamera.transform.localPosition = currentOriginalPos;
     }
 
     // Slow motion effect for super moves

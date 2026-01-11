@@ -168,6 +168,11 @@ public class FightingController : MonoBehaviour
 
     public IEnumerator PlayHitDamageAnimation(int takeDamage)
     {
+        if (superMeter != null && superMeter.IsPerformingSuper())
+        {
+            yield break;
+        }
+
         yield return new WaitForSeconds(0.5f);
 
         if (hitSounds != null && hitSounds.Length > 0)
