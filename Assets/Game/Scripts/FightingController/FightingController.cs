@@ -14,9 +14,11 @@ public class FightingController : MonoBehaviour
     public int attackDamage = 5;
     public string[] attackAnimations = { "Attack1Animation", "Attack2Animation", "Attack3Animation", "Attack4Animation" };
     public float dodgeDistance = 2f;
+    public float dodgeCooldown = 2.5f;
     public float attackRadius = 2.2f;
     public Transform[] opponents;
     private float lastAttackTime;
+    private float lastDodgeTime;
 
     [Header("Effects and Sound")]
     public AudioClip[] hitSounds;
@@ -151,8 +153,10 @@ public class FightingController : MonoBehaviour
 
     void PerformDodgeFront()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        // Check cooldown to prevent spam
+        if (Input.GetKeyDown(KeyCode.E) && Time.time - lastDodgeTime > dodgeCooldown)
         {
+            lastDodgeTime = Time.time;
             animator.Play("DodgeFrontAnimation");
             Vector3 dodgeDirection = transform.forward * dodgeDistance;
 
