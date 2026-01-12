@@ -1343,6 +1343,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1539866404}
   m_CullTransparentMesh: 1
+--- !u!1 &1818344407
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1818344409}
+  - component: {fileID: 1818344408}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1818344408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818344407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a982afe8559a244d89aa30b71e82fca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  menuMusic: {fileID: 8300000, guid: 5a17a13edd5f5472786671664224a595, type: 3}
+  battleMusic: {fileID: 8300000, guid: 8f6b174dc09c74cb98b05bc06b96dc09, type: 3}
+  musicVolume: 0.3
+  playOnStart: 1
+  menuScenes:
+  - MainMenu
+  - SelectCharacter
+  - SelectStage
+  battleScenes:
+  - Map1
+  - Map2
+  - Map3
+--- !u!4 &1818344409
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818344407}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6, y: -0.219, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1850765835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2720,3 +2776,4 @@ SceneRoots:
   - {fileID: 6656059}
   - {fileID: 785461431}
   - {fileID: 1530824841}
+  - {fileID: 1818344409}

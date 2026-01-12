@@ -14,7 +14,7 @@ public class FightingController : MonoBehaviour
     public int attackDamage = 5;
     public string[] attackAnimations = { "Attack1Animation", "Attack2Animation", "Attack3Animation", "Attack4Animation" };
     public float dodgeDistance = 2f;
-    public float dodgeCooldown = 2.5f;
+    public float dodgeCooldown = 1.5f;
     public float attackRadius = 2.2f;
     public Transform[] opponents;
     private float lastAttackTime;

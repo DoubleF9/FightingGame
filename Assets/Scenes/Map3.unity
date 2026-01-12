@@ -1451,6 +1451,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 1068554361895811584, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068554361895811584, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -1493,6 +1497,10 @@ PrefabInstance:
     - target: {fileID: 1335828460088182165, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1335828460088182165, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1335828460088182165, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
@@ -1549,6 +1557,10 @@ PrefabInstance:
     - target: {fileID: 3612594062344721549, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3612594062344721549, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3612594062344721549, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
@@ -1635,6 +1647,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4215428566363031535, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215428566363031535, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -1685,6 +1701,10 @@ PrefabInstance:
     - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
@@ -1739,6 +1759,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7643477248990386785, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7643477248990386785, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -1789,6 +1813,10 @@ PrefabInstance:
     - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
@@ -1865,6 +1893,10 @@ PrefabInstance:
     - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: maxHealth
       value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: dodgeCooldown
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: opponents.Array.size
