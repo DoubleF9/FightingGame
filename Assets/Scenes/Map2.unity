@@ -1234,6 +1234,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5761672087790433904}
     - target: {fileID: 1068554361895811584, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1068554361895811584, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
       objectReference: {fileID: 4131042810621345161}
@@ -1269,6 +1273,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 1335828460088182165, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1335828460088182165, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1317,6 +1325,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 3612594062344721549, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 3612594062344721549, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1394,6 +1406,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5761672087790433904}
     - target: {fileID: 4215428566363031535, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4215428566363031535, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
       objectReference: {fileID: 4131042810621345161}
@@ -1437,6 +1453,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 6829572628026115576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1481,6 +1501,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 7643477248990386785, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7643477248990386785, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1525,6 +1549,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 7912389258723638366, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1593,6 +1621,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5761672087790433904}
+    - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 9094644143194054576, guid: c70610d958d159f479c0e00fe9639bcd, type: 3}
       propertyPath: 'opponents.Array.data[0]'
       value: 
@@ -1850,6 +1882,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5698938473568804395}
     - target: {fileID: 869266545139998556, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 869266545139998556, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
       objectReference: {fileID: 4154912560283007944}
@@ -1926,6 +1962,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5698938473568804395}
     - target: {fileID: 1062016096520226646, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1062016096520226646, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
       objectReference: {fileID: 4154912560283007944}
@@ -2001,6 +2041,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5698938473568804395}
+    - target: {fileID: 2403221529124444960, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2403221529124444960, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
@@ -2126,6 +2170,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5698938473568804395}
     - target: {fileID: 4950434074339081952, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4950434074339081952, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
       objectReference: {fileID: 4154912560283007944}
@@ -2193,6 +2241,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5698938473568804395}
+    - target: {fileID: 5936337338154599254, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 5936337338154599254, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
@@ -2266,6 +2318,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5698938473568804395}
     - target: {fileID: 6524639179254344757, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 6524639179254344757, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
       objectReference: {fileID: 4154912560283007944}
@@ -2338,6 +2394,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5698938473568804395}
     - target: {fileID: 7526512777261235763, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7526512777261235763, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
       objectReference: {fileID: 4154912560283007944}
@@ -2405,6 +2465,10 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 5698938473568804395}
+    - target: {fileID: 8436448713749638819, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 8436448713749638819, guid: 01c3c24b820275042a9fd6fe39b8fa15, type: 3}
       propertyPath: 'players.Array.data[0]'
       value: 
